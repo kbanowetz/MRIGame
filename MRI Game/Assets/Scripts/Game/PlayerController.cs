@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 	private float startTime;  // Used to keep track of how long the tutorial has been running
 	private float scoreTime;  // Used to keep track of how long the powerUpValue has been displaying
 	private float levelTime;  // Used to keep track of how long the levelText has been displaying
-	private BellowsInput input;  // input from Input Module
+	private Input input;  // input from Input Module
 	private double m;  // Holds data used in normalization calculation
 	private double b;  // Holds data used in normalization calculation
 	private Log log;  // Reference to Log object the game should log events to 
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour {
 	void Update()
 	{
 		// GetInput to get most recent MRI data
-		int position = input.GetInput(true);  // Remove true when using with server
+		int position = input.GetInput();  // Remove true when using with server
 
 		// Make sure the position is not out of the bounds set by the calibration
 		if (position > calibration.Max)

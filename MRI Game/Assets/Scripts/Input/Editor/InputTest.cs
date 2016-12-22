@@ -13,12 +13,12 @@ using NUnit.Framework;
 [TestFixture]
 public class InputUnitTests
 {
-	InputModule inputModule;
+	Input inputModule;
 
 	[SetUp]
 	public void initialize()
 	{
-		this.inputModule = new InputModule();
+		this.inputModule = new TcpInput();
 	}
 
 	[Test]
@@ -26,7 +26,7 @@ public class InputUnitTests
 	{
 		for (int x = 0; x < 10000; x++) 
 		{
-			int data = this.inputModule.GetInput(true);
+			int data = this.inputModule.GetInput();
 			Assert.Less(data, 10000);
 			Assert.Greater(data, 0);
 		}

@@ -8,12 +8,12 @@ using System.Collections;
 public class CalibrationController
 {
 
-	private BellowsInput input;
+	private Input input;
 
 	// Provides access to the calibration created.
     public Calibration Calibration { get; private set; }
 
-    public CalibrationController(BellowsInput input)
+    public CalibrationController(Input input)
     {
         this.input = input;
 		Calibration = new Calibration ();
@@ -26,7 +26,7 @@ public class CalibrationController
 	 */
     public void Update()
     {
-        int val = input.GetInput(true);  // Remove true when use actual server
+        int val = input.GetInput();
         if (val > Calibration.Max)
         {
             Calibration.Max = val;

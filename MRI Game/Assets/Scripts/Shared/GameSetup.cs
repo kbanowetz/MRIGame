@@ -19,10 +19,7 @@ public static class GameSetup {
 	public static int Level {get; set;}
 	public static MainMenu.State CurrentState {get;set;}
 	public static CalibrationController CalibrationController {get; set;}
-    //TODO
-    //Commented out for iteration 1 compile - is InputBellows correct?
-	public static InputModule Input {get; set;}
-
+	public static Input Input {get; set;}
 	//These are inteded to be changed as the game advances, these are just temps
 	//TODO: There are better approaches to this..
 	public static List<string> AlgorithmSelectList {

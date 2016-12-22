@@ -29,7 +29,9 @@ public class Preferences : MonoBehaviour {
 		}
 
 		if (isFirstStart) {
-			GameSetup.Input = new InputModule ();
+			if (GameSetup.Input == null) {
+				GameSetup.Input = new TcpInput ();
+			}
 			isFirstStart = false;
 		}
 	}

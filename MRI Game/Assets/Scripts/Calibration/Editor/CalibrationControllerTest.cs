@@ -9,13 +9,13 @@ public class CalibrationControllerTest
 {
 	private const int DATASIZE = 200;
 
-	BellowsInput input;
+	Input input;
 	CalibrationController controller;
 
 	[SetUp]
 	public void Setup() {
 		// Mock the input to allow control over GetInput return values
-		 input = Substitute.For<BellowsInput>();
+		 input = Substitute.For<Input>();
 
 		 controller = new CalibrationController(input);
 	}
