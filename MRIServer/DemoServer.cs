@@ -174,6 +174,7 @@ public class DemoServer
 			//pull the bellows position data out of the Serial "packet"
 			short ActualData = (short)(Buffer [7] << 8 | Buffer [6]);
 			return ActualData;
+			Console.WriteLine (ActualData);
 		} catch (Exception) {
 			return -2;
 		}
