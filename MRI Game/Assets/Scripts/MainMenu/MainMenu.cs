@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour {
 	public Button QuitButton;
 	public Dropdown AvatarDropdown;
 	public Dropdown GameDropdown;
+	public ScrollRect ScrollView;
 
 	private Log log;
 
@@ -83,6 +84,7 @@ public class MainMenu : MonoBehaviour {
 				CalibrationButton.GetComponentInChildren<Text> ().text = "calibrate";
 				log.LogCalibration (GameSetup.CalibrationController.Calibration);
 				log.Stop ();  // Stop log now that calibration is done
+				ScrollView.content = LogCalibration;
 				GameSetup.CurrentState = State.PostCalibration;
 				adjustAssetsInteractivity (true, true, true, true, true);
 			}
